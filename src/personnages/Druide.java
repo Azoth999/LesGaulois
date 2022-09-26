@@ -34,8 +34,13 @@ public class Druide {
 		}
 	}
 	
-	public void booster() {
-		
+	public void booster(Gaulois gaulois) {
+		if (gaulois.getNom().equals("Obelix")) {
+			System.out.println("Non, Obélix !... Tu n’auras pas de potion magique !");
+		}else {
+			preparerPotion();
+			gaulois.boirePotion(this.forcePotion);
+		}
 	}
 	
 	public String getNom() {
