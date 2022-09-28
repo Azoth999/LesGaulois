@@ -38,7 +38,7 @@ public class Gaulois {
 		effetPotion = forcePotion;
 		parler("Merci Druide, je sens que ma force est "
 				+ forcePotion 
-				+ " fois décuplée.");		
+				+ " fois dÃ©cuplÃ©e.");		
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class Gaulois {
 	}
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois asterix = new Gaulois("AstÃ©rix", 8);
 		Romain romain = new Romain("Romain", 5);
 		System.out.println(asterix);
 		System.out.println(asterix.prendreParole());
