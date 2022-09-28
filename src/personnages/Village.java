@@ -24,4 +24,7 @@ public class Village {
 		return chef;
 	}
 	
+	public void setChef(Chef chef) {
+		this.chef = chef;
+	}
 }
