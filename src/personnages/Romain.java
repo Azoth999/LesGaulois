@@ -40,7 +40,7 @@ public class Romain {
 	public static void main(String[] args) {
 		Romain romain = new Romain("Romain", 5);
 		System.out.println(romain.prendreParole());
-		romain.parler("Je vais te dÃ©truire!");
+		romain.parler("Je vais te détruire!");
 		romain.recevoirCoup(4);
 		romain.recevoirCoup(5);
 	}

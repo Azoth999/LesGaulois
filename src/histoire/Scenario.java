@@ -14,9 +14,9 @@ public class Scenario {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("AstÃ©rix",8);
+		Gaulois asterix = new Gaulois("Astérix",8);
 		Romain minus = new Romain("Minus",5);
-		asterix.parler("Bonjour Ã  tous");
+		asterix.parler("Bonjour à tous");
 		minus.parler("UN GAU... UN GAUGAU...");
 		asterix.frapper(minus);
 		asterix.frapper(minus);
