@@ -13,10 +13,11 @@ public class Village {
 	public Gaulois[] population;
 	public Chef chef;
 	
-	public Village(String nom,int nbVillageoisMaximum, Chef chef) {
+	public Village(String nom,int nbVillageoisMaximum) {
 		this.nom = nom;
 		this.population =new Gaulois[nbVillageoisMaximum];
 		this.chef = chef;
+		this.chef.setVillage(this);
 	}
 	
 	public String getNom() {
@@ -56,10 +57,10 @@ public class Village {
 	}
 	
 	public static void main(String[] args) {
-		Chef chef = new Chef("Abraracourcix", 6, 1);
+		Village village = new Village("Village des irréductibles",30);
+		Chef chef = new Chef("Abraracourcix", 6,village);
 		Gaulois asterix = new Gaulois("Astérix",8);
 		Gaulois obelix = new Gaulois("Obélix",25);
-		Village village = new Village("Village des irréductibles",30,chef);
 		village.ajouterHabitant(asterix);
 		village.ajouterHabitant(obelix);
 		/*

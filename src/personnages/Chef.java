@@ -13,10 +13,18 @@ public class Chef {
 	private int effetPotion = 1;
 	private Village village;
 	
-	public Chef(String nom, int force, int effetPotion) {
+	public Chef(String nom, int force, Village vilalge) {
 		this.nom = nom;
 		this.force = force;
-		this.effetPotion = effetPotion;
+		this.village = vilalge;
+		this.village.setChef(this);
+	}
+	
+	public void setVillage(Village village) {
+		this.village = village;
+	}
+	public Village getVillage() {
+		return village;
 	}
 	
 	public String getNom() {
@@ -28,7 +36,7 @@ public class Chef {
 	}
 	
 	private String prendreParole() {
-		return "Le chef " + nom + " du village " + village.getNom() + " : ";
+		return "Le chef " + nom + " du village " + getVillage().getNom() + " : ";
 	}
 	
 	public void frapper(Romain romain) {
