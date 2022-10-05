@@ -12,9 +12,10 @@ public class Village {
 	public int nbVillageois = 0;
 	public Gaulois[] population;
 	public Chef chef;
+	
 	public Village(String nom,int nbVillageoisMaximum, Chef chef) {
 		this.nom = nom;
-		this.population =population[nbVillageoisMaximum];
+		this.population =new Gaulois[nbVillageoisMaximum];
 		this.chef = chef;
 	}
 	
@@ -28,5 +29,50 @@ public class Village {
 	
 	public void setChef(Chef chef) {
 		this.chef = chef;
+	}
+	
+	public void ajouterHabitant(Gaulois habitant) {
+		if (this.nbVillageois<this.population.length) {
+			this.population[this.nbVillageois]=habitant;
+			this.nbVillageois++;
+		}else {
+			System.err.println("Le vilalge est plein, il n'y a plus de place!");
+		}
+	}
+	
+	public Gaulois trouverHabitant(int numero) {
+		return this.population[numero];
+	}
+	
+	public void afficherVillageois() {
+		String texte = "Dans le village du chef ";
+		texte += getChef().getNom();
+		texte += " vivent les légendaires gaulois :";
+		for (int i = 0; i < nbVillageois; i++) {
+			texte += "\n - ";
+			texte += this.population[i].getNom();
+		}
+		System.out.println(texte);
+	}
+	
+	public static void main(String[] args) {
+		Chef chef = new Chef("Abraracourcix", 6, 1);
+		Gaulois asterix = new Gaulois("Astérix",8);
+		Gaulois obelix = new Gaulois("Obélix",25);
+		Village village = new Village("Village des irréductibles",30,chef);
+		village.ajouterHabitant(asterix);
+		village.ajouterHabitant(obelix);
+		/*
+		 *Gaulois gaulois = village.trouverHabitant(30);
+		 *On obtiens un message OutOfBounds car la liste est de taille 30
+		 *et n'a donc des valeurs que jusqu'a l'index 29.
+		*/
+		/*
+		 *Gaulois gaulois = village.trouverHabitant(1);
+		 *System.out.println(gaulois);
+		 *On obtiens null car il n'y a pas d'élément inscrit à l'index 1
+		 *de la liste soit un élément innexistant (null)
+		*/
+		village.afficherVillageois();
 	}
 }
