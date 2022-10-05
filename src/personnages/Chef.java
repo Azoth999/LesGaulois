@@ -19,7 +19,7 @@ public class Chef {
 		this.village = vilalge;
 		this.village.setChef(this);
 	}
-	
+
 	public void setVillage(Village village) {
 		this.village = village;
 	}

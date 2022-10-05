@@ -10,11 +10,14 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipement;
+	private int nbEquipement = 0;
 
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 		assert force>0;
+		this.equipement=new Equipement[2];
 	}
 
 	public String getNom() {
@@ -39,6 +42,22 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 		assert force<forceInit;
+	}
+	
+	public String sEquiper(Equipement equipement) {
+		String texte = "Le soldat ";
+		texte+=this.getNom();
+		switch (nbEquipement) {
+		case 2: {
+			texte+= " est déjà bien protégé!";
+			return texte;
+		}
+		case 1: if (this.equipement[0]==equipement) {
+			return
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + nbEquipement);
+		}
 	}
 	
 	public static void main(String[] args) {

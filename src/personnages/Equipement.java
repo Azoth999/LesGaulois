@@ -9,8 +9,13 @@ public enum Equipement {
 		this.equipement = equipement;
 	}
 	
-	private String toString() {
-		return this.equipement;
+	public String getEquipement() {
+		return equipement;
+	}
+	
+	@Override
+	public String toString() {
+		return "[equipement = " + equipement + "]";
 	}
 	
 }
