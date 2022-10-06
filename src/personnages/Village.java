@@ -16,7 +16,6 @@ public class Village {
 	public Village(String nom,int nbVillageoisMaximum) {
 		this.nom = nom;
 		this.population =new Gaulois[nbVillageoisMaximum];
-		this.chef = chef;
 		this.chef.setVillage(this);
 	}
 	
