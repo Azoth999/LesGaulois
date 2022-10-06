@@ -1,8 +1,8 @@
 package personnages;
 
 public enum Equipement {
-	CASQUE("Casque"),
-	BOUCLIER("Bouclier");
+	CASQUE("casque"),
+	BOUCLIER("bouclier");
 	private final String equipement;
 	
 	private Equipement(String equipement) {
