@@ -25,6 +25,8 @@ public class Scenario {
 		panoramix.booster(asterix);
 		asterix.parler("Bonjour à tous");
 		minus.parler("UN GAU... UN GAUGAU...");
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);		
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 		asterix.frapper(minus);
