@@ -72,6 +72,16 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	
+	public void faireUneDonnation(Musee musee) {
+		if (trophees != null) {
+			String texte = "Je donne au musee tout mes trophees :";
+			for (int i=0; i<nbTrophees; i++) {
+				texte += "\n-" + trophees[i].getEquipement();
+			}
+			this.parler(texte);
+		}
+	}
+	
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Romain romain = new Romain("Romain", 5);
