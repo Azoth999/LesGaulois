@@ -18,6 +18,7 @@ public class Scenario {
 		Gaulois obelix = new Gaulois("Obélix",8);
 		Gaulois asterix = new Gaulois("Astérix",8);
 		Romain minus = new Romain("Minus",5);
+		Musee musee = new Musee();
 		panoramix.parler("Je vais aller préparer une petite potion...");
 		panoramix.preparerPotion();
 		panoramix.booster(obelix);
@@ -30,6 +31,7 @@ public class Scenario {
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 		asterix.frapper(minus);
+		asterix.faireUneDonnation(musee);
 
 	}
 
