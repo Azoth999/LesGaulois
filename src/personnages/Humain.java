@@ -24,7 +24,7 @@ public class Humain {
 		return argent;
 	}
 	
-	public String prendreParole() {
+	protected String prendreParole() {
 		return "L'humain " + this.getNom() + " : ";
 		}
 	

@@ -26,6 +26,7 @@ public class Chef extends Humain {
 		return village;
 	}
 	
+	@Override
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "� " + texte + "�");
 	}
