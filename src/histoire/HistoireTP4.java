@@ -14,6 +14,9 @@ public static void main(String[] args) {
 	marco.seFaireExtorquer();
 	marco.recevoir(15);
 	marco.boire();
+	Yakuza yaku = new Yakuza("Yaku le Noir", "whisky", 30, "Dragon noir");
+	yaku.direBonjour();
+	yaku.extorquer(marco);
 }
 
 }
