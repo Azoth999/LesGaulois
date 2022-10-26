@@ -7,32 +7,27 @@ package personnages;
  * @author prn3318a
  *
  */
-public class Romain {
+public class Romain extends Humain {
 	private String texte;
-	//attirbut ajouté pour TP3
-	private String nom;
 	private int force;
 	private Equipement[] listeEquipement;
 	private int nbEquipement;
 
-	public Romain(String nom, int force) {
-		this.nom = nom;
+	public Romain(String nom, int force,String boisson, int argent) {
+		super(nom,boisson,argent);
 		this.force = force;
 		assert force>0;
 		this.listeEquipement=new Equipement[2];
 		this.nbEquipement = 0;
 	}
 
-	public String getNom() {
-		return nom;
-	}
-
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 
-	private String prendreParole() {
-		return "Le romain " + nom + " : ";
+	@Override
+	public String prendreParole() {
+		return "Le romain " + this.getNom() + " : ";
 	}
 	
 	//
@@ -87,7 +82,7 @@ public class Romain {
 	
 		private Equipement[] ejecterEquipement() {
 			Equipement[] equipementEjecte = new Equipement[this.nbEquipement];
-			System.out.println("L'équipement de " + nom + " s'envole sous la force du coup.");
+			System.out.println("L'équipement de " + this.getNom() + " s'envole sous la force du coup.");
 			int nbEquipementEjecte = 0;
 			for (int i = 0; i < this.nbEquipement; i++) {
 				if (listeEquipement[i] != null) {
@@ -141,7 +136,7 @@ public class Romain {
 	}
 	
 	public static void main(String[] args) {
-		Romain romain = new Romain("Minus", 6);
+		/*Romain romain = new Romain("Minus", 6);
 		System.out.println(romain.prendreParole());
 		System.out.println(romain.sEquiper(Equipement.CASQUE));
 		System.out.println(romain.sEquiper(Equipement.CASQUE));
@@ -149,6 +144,6 @@ public class Romain {
 		System.out.println(romain.sEquiper(Equipement.CASQUE));
 		romain.parler("Je vais te détruire!");
 		romain.recevoirCoup(4);
-		romain.recevoirCoup(5);
+		romain.recevoirCoup(5);*/
 	}
 }

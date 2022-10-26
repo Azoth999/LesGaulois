@@ -7,33 +7,25 @@ package personnages;
  * @author PEYRAT Yanis
  *
  */
-public class Gaulois {
+public class Gaulois extends Humain {
 	private int force;
 	private int nbTrophees;
 	private Equipement[] trophees = new Equipement[100];
 	//attributs ajoutés pour TP3
-	private String nom;
 	private int effetPotion = 1;
 
-	public Gaulois(String nom, int force) {
-		this.nom = nom;
+	public Gaulois(String nom, int force,String boisson, int argent) {
+		super(nom,boisson,argent);
 		this.force = force;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 
 	//
 	//méthode ajoutée pour TP3
 	//
 	
-	private String prendreParole() {
-		return "Le gaulois " + this.nom + " : ";
+	@Override
+	public String prendreParole() {
+		return "Le gaulois " + this.getNom() + " : ";
 		}
 	
 //	private String prendreParole() {
@@ -46,7 +38,7 @@ public class Gaulois {
 	//
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(this.getNom() + " envoie un grand coup dans la mâchoire de " + romain.getNom());
 		Equipement[] tropheesObtenus= romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; tropheesObtenus != null && i < tropheesObtenus.length 
 				&& tropheesObtenus[i] != null ; i++, nbTrophees++) {
@@ -69,7 +61,7 @@ public class Gaulois {
 
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		return "Gaulois [nom=" + this.getNom() + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	
 	public void faireUneDonnation(Musee musee) {
@@ -82,7 +74,7 @@ public class Gaulois {
 		}
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Romain romain = new Romain("Romain", 5);
 		System.out.println(asterix);
@@ -90,5 +82,5 @@ public class Gaulois {
 		asterix.parler("Salutation voyageur!");
 		asterix.boirePotion(6);
 		asterix.frapper(romain);
-	}
+	}*/
 }

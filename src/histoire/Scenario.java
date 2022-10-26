@@ -14,7 +14,7 @@ public class Scenario {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Druide panoramix = new Druide("Panoramix",5,10);
+		/*Druide panoramix = new Druide("Panoramix",5,10);
 		Gaulois obelix = new Gaulois("Obélix",8);
 		Gaulois asterix = new Gaulois("Astérix",8);
 		Romain minus = new Romain("Minus",5);
@@ -31,7 +31,7 @@ public class Scenario {
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 		asterix.frapper(minus);
-		asterix.faireUneDonnation(musee);
+		asterix.faireUneDonnation(musee);*/
 
 	}
 

@@ -56,12 +56,12 @@ public class Village {
 	}
 	
 	public static void main(String[] args) {
-		Village village = new Village("Village des irréductibles",30);
-		Chef chef = new Chef("Abraracourcix", 6,village);
-		Gaulois asterix = new Gaulois("Astérix",8);
-		Gaulois obelix = new Gaulois("Obélix",25);
-		village.ajouterHabitant(asterix);
-		village.ajouterHabitant(obelix);
+//		Village village = new Village("Village des irréductibles",30);
+//		Chef chef = new Chef("Abraracourcix", 6,village);
+//		Gaulois asterix = new Gaulois("Astérix",8);
+//		Gaulois obelix = new Gaulois("Obélix",25);
+//		village.ajouterHabitant(asterix);
+//		village.ajouterHabitant(obelix);
 		/*
 		 *Gaulois gaulois = village.trouverHabitant(30);
 		 *On obtiens un message OutOfBounds car la liste est de taille 30
@@ -72,7 +72,7 @@ public class Village {
 		 *System.out.println(gaulois);
 		 *On obtiens null car il n'y a pas d'élément inscrit à l'index 1
 		 *de la liste soit un élément innexistant (null)
-		*/
-		village.afficherVillageois();
+		
+		village.afficherVillageois();*/
 	}
 }
