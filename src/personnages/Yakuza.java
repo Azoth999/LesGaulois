@@ -56,7 +56,7 @@ public class Yakuza extends Humain {
 	public void gagner(Ronin ronin) {
 		String texte = "Ce ronin pensait vraiment battre ";
 		texte += this.getNom();
-		texte += " du caln de ";
+		texte += " du clan de ";
 		texte += this.getClan();
 		texte += "? Je l'ai dépouillé de ses ";
 		texte += ronin.getArgent();

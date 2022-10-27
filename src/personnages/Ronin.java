@@ -30,7 +30,13 @@ public class Ronin extends Humain {
 			this.gagnerArgent(yakuza.getArgent());
 			yakuza.perdre();
 		} else {
-			if honneur >
+			texte = "J'ai perdu contre ce yakuza, mon honneur et ma bourse en ont pris un coup.";
+			parler(texte);
+			this.perdreArgent(getArgent());
+			yakuza.gagner(this);
+			if (honneur > 0) {
+				honneur--;
+			}
 		}
 	}
 
