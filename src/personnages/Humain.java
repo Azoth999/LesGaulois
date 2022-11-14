@@ -2,6 +2,7 @@ package personnages;
 
 public class Humain {
 
+	private static int MAX_MEMOIRE = 3;
 	private String nom;
 	private String boisson;
 	private int argent;
@@ -12,16 +13,16 @@ public class Humain {
 		this.nom = nom;
 		this.argent = argent;
 		this.boisson = boisson;
-		this.memoire = new Humain[30];
+		this.memoire = new Humain[MAX_MEMOIRE];
 	}
 	
 	
 	public void memoriser(Humain humain) {
-		if (nbrconnaissances+1 > 30){
-			for (int i = 0; i <= nbrconnaissances-1; i++) {
+		if (nbrconnaissances+1 > MAX_MEMOIRE){
+			for (int i = 0; i < nbrconnaissances-1; i++) {
 				memoire[i]=memoire[i+1];
 			}
-			memoire[30]=humain;
+			memoire[MAX_MEMOIRE-1]=humain;
 		} else {
 			memoire[nbrconnaissances]=humain;
 			nbrconnaissances++;
@@ -43,16 +44,16 @@ public class Humain {
 		direBonjour();
 		humain.direBonjour();
 		humain.memoriser(this);
-		memoriser(humain);
+		this.memoriser(humain);
 		
 	}
 	
 	public void listerConnaissance() {
 		String texte = "Je connais beaucoup de monde dont : ";
-		for (int i = 0; i < nbrconnaissances; i++) {
+		for (int i = 0; i < nbrconnaissances-1; i++) {
 			texte = texte + memoire[i].getNom() + ",";
 		}
-		texte+=memoire[nbrconnaissances] + ".";
+		texte+=memoire[nbrconnaissances-1].getNom() + ".";
 		parler(texte);
 	}
 	
