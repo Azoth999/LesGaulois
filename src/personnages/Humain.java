@@ -5,14 +5,37 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
-	private int[] memoire;
+	private int nbrconnaissances = 0;
+	private Humain[] memoire;
 
 	public Humain(String nom,String boisson, int argent) {
 		this.nom = nom;
 		this.argent = argent;
 		this.boisson = boisson;
-		this.memoire = new int[30];
+		this.memoire = new Humain[30];
 	}
+	
+	
+	private void memoriser(Humain humain) {
+		if (nbrconnaissances+1 > 30){
+			for (int i = 0; i <= nbrconnaissances-1; i++) {
+				memoire[i]=memoire[i+1];
+			}
+			memoire[30]=humain;
+		} else {
+			memoire[nbrconnaissances]=humain;
+			nbrconnaissances++;
+		}
+	}
+	
+	private void faireConnaissanceAvec(Humain humain) {
+		direBonjour();
+		humain.direBonjour();
+		humain.memoriser(this);
+		memoriser(humain);
+		
+	}
+	
 
 	public String getNom() {
 		return nom;
