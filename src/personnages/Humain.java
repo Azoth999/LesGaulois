@@ -16,7 +16,7 @@ public class Humain {
 	}
 	
 	
-	private void memoriser(Humain humain) {
+	public void memoriser(Humain humain) {
 		if (nbrconnaissances+1 > 30){
 			for (int i = 0; i <= nbrconnaissances-1; i++) {
 				memoire[i]=memoire[i+1];
@@ -28,12 +28,32 @@ public class Humain {
 		}
 	}
 	
-	private void faireConnaissanceAvec(Humain humain) {
+	public void faireConnaissanceAvec(Humain humain) {
+		String texte = "Le ";
+		texte+=this.getClass().getSimpleName() + " ";
+		texte+=this.getNom();
+		texte += " rencontre ";
+		if (this.getClass() == humain.getClass()) {
+			texte+="un autre ";
+		}else {
+			texte+="le ";
+		}
+		texte += humain.getClass().getSimpleName()+".";
+		System.out.println(texte);
 		direBonjour();
 		humain.direBonjour();
 		humain.memoriser(this);
 		memoriser(humain);
 		
+	}
+	
+	public void listerConnaissance() {
+		String texte = "Je connais beaucoup de monde dont : ";
+		for (int i = 0; i < nbrconnaissances; i++) {
+			texte = texte + memoire[i].getNom() + ",";
+		}
+		texte+=memoire[nbrconnaissances] + ".";
+		parler(texte);
 	}
 	
 
