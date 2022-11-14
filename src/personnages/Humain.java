@@ -5,11 +5,13 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
+	private int[] memoire;
 
 	public Humain(String nom,String boisson, int argent) {
 		this.nom = nom;
 		this.argent = argent;
 		this.boisson = boisson;
+		this.memoire = new int[30];
 	}
 
 	public String getNom() {
