@@ -26,6 +26,10 @@ public class Traitre extends Samourai {
 		}
 	}
 	
+	public void faireLeGentil() {
+		
+	}
+	
 	public int getTraitrise() {
 		return traitrise;
 	}
