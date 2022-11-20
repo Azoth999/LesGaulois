@@ -1,11 +1,10 @@
 package personnages;
 import java.util.Random;
-import java.util.random.*;
 
 public class Traitre extends Samourai {
 
 	private int traitrise = 0;
-	Random random = new Random();
+	private Random random = new Random();
 	
 	public Traitre(String seigneur, String nom, String boisson, int argent) {
 		super(seigneur, nom, boisson, argent);

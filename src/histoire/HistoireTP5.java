@@ -34,6 +34,26 @@ public class HistoireTP5 {
 		masako.faireLeGentil();
 		masako.direBonjour();
 		roro.direBonjour();
+		
+		System.out.println("_______________________\nTests 5 - Même combat\n_______________________");
+		Samourai akira = new Traitre("Miyamoto", "Akira", "whisky", 50);
+		Ronin hiro = new Traitre("Miyamoto", "Hiro", "saké", 20);
+		Humain nori = new Traitre("Miyamoto", "Nori", "whisky", 70);
+		akira.direBonjour();
+		hiro.direBonjour();
+		nori.direBonjour();
+		
+		System.out.println("_______________________\nTests 6 - Mamie\n_______________________");
+		
+		GrandMere grandMere = new GrandMere("Grand-Mère", 10);
+		grandMere.faireConnaissanceAvec(akimoto);
+		grandMere.faireConnaissanceAvec(yaku);
+		grandMere.faireConnaissanceAvec(masako);
+		grandMere.faireConnaissanceAvec(kumi);
+		grandMere.faireConnaissanceAvec(marco);
+		grandMere.faireConnaissanceAvec(chonin);
+		grandMere.ragoter();
+
 	}
 
 }

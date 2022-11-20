@@ -2,22 +2,23 @@ package personnages;
 
 public class Humain {
 
-	private static int MAX_MEMOIRE = 3;
+	protected static int MAX_MEMOIRE;
 	private String nom;
 	private String boisson;
 	private int argent;
 	private int nbrConnaissances = 0;
-	private Humain[] memoire;
+	protected Humain[] memoire;
 
 	public Humain(String nom,String boisson, int argent) {
 		this.nom = nom;
 		this.argent = argent;
 		this.boisson = boisson;
+		MAX_MEMOIRE=30;
 		this.memoire = new Humain[MAX_MEMOIRE];
 	}
 	
 	
-	public void memoriser(Humain humain) {
+	protected void memoriser(Humain humain) {
 		if (nbrConnaissances+1 > MAX_MEMOIRE){
 			for (int i = 0; i < nbrConnaissances-1; i++) {
 				memoire[i]=memoire[i+1];
@@ -72,6 +73,9 @@ public class Humain {
 	
 	public int getNbrConnaissances() {
 		return nbrConnaissances;
+	}
+	public void setNbrConnaissances(int nbrConnaissances) {
+		this.nbrConnaissances = nbrConnaissances;
 	}
 	
 	public Humain[] getMemoire() {
