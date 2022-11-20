@@ -6,7 +6,7 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
-	private int nbrconnaissances = 0;
+	private int nbrConnaissances = 0;
 	private Humain[] memoire;
 
 	public Humain(String nom,String boisson, int argent) {
@@ -18,14 +18,14 @@ public class Humain {
 	
 	
 	public void memoriser(Humain humain) {
-		if (nbrconnaissances+1 > MAX_MEMOIRE){
-			for (int i = 0; i < nbrconnaissances-1; i++) {
+		if (nbrConnaissances+1 > MAX_MEMOIRE){
+			for (int i = 0; i < nbrConnaissances-1; i++) {
 				memoire[i]=memoire[i+1];
 			}
 			memoire[MAX_MEMOIRE-1]=humain;
 		} else {
-			memoire[nbrconnaissances]=humain;
-			nbrconnaissances++;
+			memoire[nbrConnaissances]=humain;
+			nbrConnaissances++;
 		}
 	}
 	
@@ -50,10 +50,10 @@ public class Humain {
 	
 	public void listerConnaissance() {
 		String texte = "Je connais beaucoup de monde dont : ";
-		for (int i = 0; i < nbrconnaissances-1; i++) {
+		for (int i = 0; i < nbrConnaissances-1; i++) {
 			texte = texte + memoire[i].getNom() + ",";
 		}
-		texte+=memoire[nbrconnaissances-1].getNom() + ".";
+		texte+=memoire[nbrConnaissances-1].getNom() + ".";
 		parler(texte);
 	}
 	
@@ -70,8 +70,16 @@ public class Humain {
 		return argent;
 	}
 	
+	public int getNbrConnaissances() {
+		return nbrConnaissances;
+	}
+	
+	public Humain[] getMemoire() {
+		return memoire;
+	}
+	
 	protected String prendreParole() {
-		return "L'humain " + this.getNom() + " : ";
+		return "(" + this.getNom() + ") - ";
 		}
 	
 	public void parler(String texte) {
