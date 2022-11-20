@@ -3,19 +3,19 @@ package personnages;
 public enum Equipement {
 	CASQUE("casque"),
 	BOUCLIER("bouclier");
-	private final String equipement;
+	private final String equipements;
 	
 	private Equipement(String equipement) {
-		this.equipement = equipement;
+		this.equipements = equipement;
 	}
 	
 	public String getEquipement() {
-		return equipement;
+		return equipements;
 	}
 	
 	@Override
 	public String toString() {
-		return "[equipement = " + equipement + "]";
+		return "[equipement = " + equipements + "]";
 	}
 	
 }
